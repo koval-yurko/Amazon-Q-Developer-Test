@@ -9,24 +9,24 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite serve playground",
-    "build": "npm run build:lib && npm run build:playground",
-    "build:lib": "vite build --config vite.lib.config.ts",
-    "build:playground": "vite build --config vite.playground.config.ts",
-    "preview": "vite preview --config vite.playground.config.ts",
+    "build": "vite build --config vite.lib.config.ts",
     "type-check": "tsc --noEmit",
-    "lint": "eslint src playground --ext .ts,.tsx",
-    "lint:fix": "eslint src playground --ext .ts,.tsx --fix",
+    "lint": "eslint src --ext .ts,.tsx",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "prepare": "npm run build:lib"
+    "prepare": "npm run build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook build && gh-pages -d storybook-static"
   },
   "keywords": [
     "react",
     "typescript",
     "tailwindcss",
     "ui-components",
-    "component-library"
+    "component-library",
+    "storybook"
   ],
   "author": "Amazon Q Developer",
   "license": "MIT",
@@ -35,6 +35,14 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.6",
+    "@storybook/addon-interactions": "^7.6.6",
+    "@storybook/addon-links": "^7.6.6",
+    "@storybook/addon-onboarding": "^1.0.10",
+    "@storybook/blocks": "^7.6.6",
+    "@storybook/react": "^7.6.6",
+    "@storybook/react-vite": "^7.6.6",
+    "@storybook/test": "^7.6.6",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
@@ -45,9 +53,12 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "storybook": "^7.6.6",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.3.3",
     "vite": "^5.0.8",

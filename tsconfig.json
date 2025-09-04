@@ -36,7 +36,7 @@
   },
   "include": [
     "src/**/*",
-    "playground/**/*"
+    "stories/**/*"
   ],
   "exclude": [
     "node_modules",
