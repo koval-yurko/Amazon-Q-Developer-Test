@@ -1,0 +1,22 @@
+@import '../../src/styles/globals.css';
+
+/* Playground specific styles */
+.playground-container {
+  @apply min-h-screen bg-gray-50;
+}
+
+.component-showcase {
+  @apply bg-white rounded-lg border border-gray-200 p-6 mb-6;
+}
+
+.code-block {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-md font-mono text-sm overflow-x-auto;
+}
+
+.sidebar {
+  @apply w-64 bg-white border-r border-gray-200 h-screen sticky top-0 overflow-y-auto;
+}
+
+.main-content {
+  @apply flex-1 p-6 overflow-y-auto;
+}
