@@ -3,5 +3,5 @@ export * from './components'
 export * from './types'
 export * from './utils'
 
-// Export styles for consumers
-export { default as './styles/globals.css' }
+// Note: CSS should be imported by consumers directly
+// import '@amazon-q-developer/ui-components/dist/styles.css'
